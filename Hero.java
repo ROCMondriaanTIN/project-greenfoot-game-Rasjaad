@@ -35,13 +35,43 @@ public class Hero extends Mover {
 
         for (Actor Water : getIntersectingObjects(Water.class)) {
             if (Water != null) {
-                
                 setLocation(598, 432);
+                
           return;
             }
         }
+        for (Actor EnemyAir : getIntersectingObjects(EnemyAir.class)) {
+            if (EnemyAir != null) {
+                setLocation(598, 432);
+                
+          return;
+            }
+        }
+        for (Actor Enemy : getIntersectingObjects(Enemy.class))
+        {
+         if (Enemy != null)
+         {
+             setLocation(598, 432);
+
+             return;
+        }
         
     }
+    for (Actor DoorM : getIntersectingObjects(DoorM.class)) {
+            if (DoorM != null) {
+             Greenfoot.setWorld(new Level2());
+                
+          return;
+            }
+        }
+        for (Actor DoorT : getIntersectingObjects(DoorT.class)) {
+            if (DoorT != null) {
+             Greenfoot.setWorld(new Level2());
+                
+          return;
+            }
+        }
+}
     boolean onGround()
     {
     Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
