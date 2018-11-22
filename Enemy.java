@@ -49,8 +49,10 @@ public class Enemy extends Mover {
     }
 public void touchHero(){
 if (isTouching(Hero.class)){
-//removeTouching(Hero.class);
+Greenfoot.delay(100);
 getWorld().showText("You lose!", 500,400);
+Greenfoot.delay(180);
+getWorld().showText("", 500,400);
 
 
 

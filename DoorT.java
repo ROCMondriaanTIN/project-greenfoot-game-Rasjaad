@@ -17,4 +17,9 @@ public class DoorT extends Tile
         // Add your action code here.
     }    
     public DoorT(String image, int width, int heigth) { super (image,width,heigth);}
+        public void touchVijand(){
+if (isTouching(Vijand.class)){
+removeTouching(Vijand.class);
+}
+}
 }

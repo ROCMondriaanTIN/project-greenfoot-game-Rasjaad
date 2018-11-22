@@ -26,6 +26,7 @@ public class Hero extends Mover {
         velocityX *= drag;
         velocityY += acc;
         touchCollision();
+        touchVijand();
 
         if (velocityY > gravity) {
             velocityY = gravity;
@@ -53,6 +54,13 @@ public class Hero extends Mover {
                 return;
             }
         }
+        for (Actor Enemy : getIntersectingObjects(Enemy.class)) {
+            if (Enemy != null) {
+
+                setLocation(598, 432);
+                return;
+            }
+        }
 
     }
     boolean onGround()
@@ -63,6 +71,15 @@ public class Hero extends Mover {
         }
         Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
         return under != null;
+    }
+     public void touchVijand(){
+        if (isTouching(Vijand.class)){
+            removeTouching(Vijand.class);
+            getWorld().showText("You won!", 500, 400);
+
+
+        }
+        
     }
 
     public void touchCollision()
@@ -117,13 +134,9 @@ public class Hero extends Mover {
 
         return isOnGround;
     }
-public void touchVijand(){
-if (isTouching(Vijand.class)){
-removeTouching(Vijand.class);
 
 }
-}
     
-}
+
 
   
