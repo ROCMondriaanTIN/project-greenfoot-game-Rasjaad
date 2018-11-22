@@ -15,7 +15,7 @@ public class Level2 extends World {
     public Level2() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        this.setBackground("bg.png");
+        this.setBackground("bg2.png");
 
         int[][] map = {
 
@@ -64,7 +64,7 @@ public class Level2 extends World {
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
-
+        Vijand vijand2 = new Vijand();
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 598, 432);
@@ -75,6 +75,7 @@ public class Level2 extends World {
         addObject(new Platform(), 3180, 527);
         addObject(new Hud2(), 15, 20);
          addObject(new EnemyAir(), 856, 367);
+         addObject(vijand2, 856, 367);
 
         // Force act zodat de camera op de juist plek staat.
         camera.act();
@@ -85,6 +86,7 @@ public class Level2 extends World {
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        ce.addCollidingMover(vijand2);
         prepare();
     }
 

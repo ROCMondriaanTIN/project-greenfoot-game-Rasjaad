@@ -17,7 +17,4 @@ public class DoorM extends Tile
         // Add your action code here.
     }    
     public DoorM(String image, int width, int heigth) { super (image,width,heigth);}
-   
-
 }
-

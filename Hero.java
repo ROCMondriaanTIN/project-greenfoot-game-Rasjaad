@@ -10,8 +10,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    
-    
+    private static boolean onPlatform = false;
 
     public Hero() {
         super();
@@ -26,8 +25,8 @@ public class Hero extends Mover {
         handleInput();
         velocityX *= drag;
         velocityY += acc;
-        
-        
+        touchCollision();
+
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -35,56 +34,55 @@ public class Hero extends Mover {
 
         for (Actor Water : getIntersectingObjects(Water.class)) {
             if (Water != null) {
-                setLocation(598, 432);
-                
-          return;
-            }
-        }
-        for (Actor EnemyAir : getIntersectingObjects(EnemyAir.class)) {
-            if (EnemyAir != null) {
-                setLocation(598, 432);
-                
-          return;
-            }
-        }
-        for (Actor Enemy : getIntersectingObjects(Enemy.class))
-        {
-         if (Enemy != null)
-         {
-             setLocation(598, 432);
 
-             return;
+                setLocation(598, 432);
+                return;
+            }
         }
-        
-    }
-    for (Actor DoorM : getIntersectingObjects(DoorM.class)) {
+        for (Actor DoorM : getIntersectingObjects(DoorM.class)) {
             if (DoorM != null) {
-             Greenfoot.setWorld(new Level2());
-                
-          return;
+
+                Greenfoot.setWorld(new Level2());
+                return;
             }
         }
         for (Actor DoorT : getIntersectingObjects(DoorT.class)) {
             if (DoorT != null) {
-             Greenfoot.setWorld(new Level2());
-                
-          return;
+
+                Greenfoot.setWorld(new Level2());
+                return;
             }
         }
-}
+
+    }
     boolean onGround()
     {
-    Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
-    return under != null;
+        if(onPlatform == true){
+            onPlatform = false;
+            return true;
+        }
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
+        return under != null;
     }
-    
-    
+
+    public void touchCollision()
+    {
+        if(isTouching(Platform.class)){
+            setLocation(getX(), getY() - 15);  
+            onPlatform = true;
+        }
+        else{
+            onPlatform = false;
+        }
+
+    }
+
     public void handleInput() {
         int x = getX(), y = getY();
         if ((Greenfoot.isKeyDown("w")) && (onGround() == true)) {
-            velocityY = -20;
+            velocityY = -15;
             setImage("p1_jump.png"); 
-            
+
         }
         if (Greenfoot.isKeyDown("s")){
             velocityY = 5;
@@ -95,37 +93,37 @@ public class Hero extends Mover {
             velocityX = -5;
             setImage("p12.png");
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 5;
+            velocityX = 10;
             setImage("p1.png");
         }
+        if(Greenfoot.isKeyDown("l")){
+            System.out.println(getX() + ", " + getY());
+            Greenfoot.delay(10);
+        }
+
     }
-         public boolean isOnSolidGround()
-         {
-             boolean isOnGround = false;
-             
-             if (getY() > getWorld().getHeight() - 50) isOnGround = true;
-             
-             int imageWidth = getImage().getWidth();
-             int imageHeight = getImage().getHeight();
-             if (getOneObjectAtOffset(imageWidth / -2, imageHeight / 2, Platform.class) != null ||
-             getOneObjectAtOffset(imageWidth / 2, imageHeight / 2, Platform.class) != null) 
-             isOnGround = true;
-             
-             return isOnGround;
-            }
-            public boolean didBumpHead()
-            {
-               boolean bumpedHead = false;
-                int imageWidth = getImage().getWidth();
-             int imageHeight = getImage().getHeight();
-             if (getOneObjectAtOffset(imageWidth / -2, imageHeight / 2, Platform.class) != null ||
-             getOneObjectAtOffset(imageWidth / 2, imageHeight / 2, Platform.class) != null) 
-             bumpedHead = true;
-             
-             return bumpedHead;
-            }
+
+    public boolean isOnSolidGround()
+    {
+        boolean isOnGround = false;
+
+        if (getY() > getWorld().getHeight() - 50) isOnGround = true;
+
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+        if (getOneObjectAtOffset(imageWidth / -2, imageHeight / 2, Platform.class) != null ||
+        getOneObjectAtOffset(imageWidth / 2, imageHeight / 2, Platform.class) != null) 
+            isOnGround = true;
+
+        return isOnGround;
+    }
+public void touchVijand(){
+if (isTouching(Vijand.class)){
+removeTouching(Vijand.class);
+
+}
+}
+    
 }
 
-    
   
-

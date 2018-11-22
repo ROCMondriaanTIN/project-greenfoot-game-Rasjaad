@@ -17,7 +17,7 @@ public class Platform extends Mover {
     public Platform() {
         super();
         setImage("bridge.png");
-        getImage().mirrorHorizontally();
+        getImage().mirrorVertically();
         walkRange = 140;
         firstAct = true;
         
