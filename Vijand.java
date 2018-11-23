@@ -20,7 +20,7 @@ public class Vijand extends Mover {
     public Vijand() {
         super();
         setImage("p2_stand.png");
-        //setImage("Vijand2.png");
+        setImage("p2_jump.png");
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
@@ -53,6 +53,7 @@ public class Vijand extends Mover {
         getX() >= 2070 && getX() <= 2074 || 
         getX() >= 2611 && getX() <= 2617 || getX() >= 2967 && getX() <= 2971
         ){
+            setImage("p2_jump.png"); 
             velocityY = -18;
             
             

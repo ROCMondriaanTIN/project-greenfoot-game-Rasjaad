@@ -27,7 +27,7 @@ public class Hero extends Mover {
         velocityY += acc;
         touchCollision();
         touchVijand();
-
+        touchVijand2();
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -37,6 +37,8 @@ public class Hero extends Mover {
             if (Water != null) {
 
                 setLocation(598, 432);
+                 
+                 
                 return;
             }
         }
@@ -61,6 +63,13 @@ public class Hero extends Mover {
                 return;
             }
         }
+        for (Actor Window : getIntersectingObjects(Window.class)) {
+            if (Window != null) {
+
+                Greenfoot.setWorld(new Level3());
+                return;
+            }
+        }
 
     }
     boolean onGround()
@@ -75,6 +84,15 @@ public class Hero extends Mover {
      public void touchVijand(){
         if (isTouching(Vijand.class)){
             removeTouching(Vijand.class);
+            getWorld().showText("You won!", 500, 400);
+
+
+        }
+        
+    }
+    public void touchVijand2(){
+        if (isTouching(Vijand2.class)){
+            removeTouching(Vijand2.class);
             getWorld().showText("You won!", 500, 400);
 
 
@@ -107,7 +125,7 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -5;
+            velocityX = -10;
             setImage("p12.png");
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 10;

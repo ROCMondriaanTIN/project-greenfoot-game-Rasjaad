@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.0" name="world" tilewidth="70" tileheight="70" tilecount="42" columns="0">
+<tileset version="1.2" tiledversion="1.2.0" name="world" tilewidth="70" tileheight="70" tilecount="60" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="70" height="70" source="../images/box.png"/>
@@ -126,5 +126,59 @@
  </tile>
  <tile id="41">
   <image width="70" height="70" source="../images/door_openTop.png"/>
+ </tile>
+ <tile id="42">
+  <image width="70" height="70" source="../images/castle.png"/>
+ </tile>
+ <tile id="43">
+  <image width="70" height="70" source="../images/castleCenter.png"/>
+ </tile>
+ <tile id="44">
+  <image width="70" height="70" source="../images/castleCenter_rounded.png"/>
+ </tile>
+ <tile id="45">
+  <image width="70" height="70" source="../images/castleHalfLeft.png"/>
+ </tile>
+ <tile id="46">
+  <image width="70" height="70" source="../images/castleHalfMid.png"/>
+ </tile>
+ <tile id="47">
+  <image width="70" height="70" source="../images/castleHalfRight.png"/>
+ </tile>
+ <tile id="48">
+  <image width="70" height="70" source="../images/castleLeft.png"/>
+ </tile>
+ <tile id="49">
+  <image width="70" height="70" source="../images/castleMid.png"/>
+ </tile>
+ <tile id="50">
+  <image width="70" height="70" source="../images/castleRight.png"/>
+ </tile>
+ <tile id="51">
+  <image width="70" height="70" source="../images/window.png"/>
+ </tile>
+ <tile id="52">
+  <image width="70" height="70" source="../images/snowCenter.png"/>
+ </tile>
+ <tile id="53">
+  <image width="70" height="70" source="../images/snowCenter_rounded.png"/>
+ </tile>
+ <tile id="54">
+  <image width="70" height="70" source="../images/snowLeft.png"/>
+ </tile>
+ <tile id="55">
+  <image width="70" height="70" source="../images/snowMid.png"/>
+ </tile>
+ <tile id="56">
+  <image width="70" height="70" source="../images/snowRight.png"/>
+ </tile>
+ <tile id="57">
+  <image width="70" height="70" source="../../OneDrive_1_5-11-2018/Tiles/dirtHillRight2.png"/>
+ </tile>
+ <tile id="58">
+  <image width="70" height="70" source="../../OneDrive_1_5-11-2018/Tiles/ladder_mid.png"/>
+ </tile>
+ <tile id="59">
+  <image width="70" height="70" source="../../OneDrive_1_5-11-2018/Tiles/ladder_top.png"/>
  </tile>
 </tileset>

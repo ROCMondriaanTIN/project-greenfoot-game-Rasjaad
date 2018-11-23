@@ -20,14 +20,14 @@ public class Vijand2 extends Mover {
     public Vijand2() {
         super();
         setImage("p2_stand.png");
-        //setImage("Vijand2.png");
+        setImage("p2_jump.png");
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
         walkRange = 20;
         firstAct = true;
 
-        speed = 5;
+        speed = 8;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Vijand2 extends Mover {
         int y = getY();
         velocityX *= drag;
         velocityY += acc;
-        touchVijand();
+        
         if (firstAct) {
             firstAct = false;
             xMin = x - walkRange / 2;
@@ -45,35 +45,28 @@ public class Vijand2 extends Mover {
         if (velocityY > gravity) {
             velocityY = gravity;
         }
-        
-        
+      
 
         velocityX = speed;
         applyVelocity();
-        if(getX() >= 1160 && getX() <= 1165 || getX() >= 1586 && getX() <= 1588 || 
+        if(getX() >= 1106 && getX() <= 1110 || getX() >= 1586 && getX() <= 1588 || 
         getX() >= 2070 && getX() <= 2074 || 
         getX() >= 2611 && getX() <= 2617 || getX() >= 2967 && getX() <= 2971
         ){
+            setImage("p2_jump.png"); 
             velocityY = -18;
             
             
             
 
         }
-        /*if(getY() >= 446 && getY() <= 445 )
-        {
-            velocityX = -2;
-        }*/
+      
+       
        
     }
 
-    public void touchVijand(){
-        if (isTouching(Hero.class)){
-            removeTouching(Vijand2.class);
-
-
-        }
-    }
+   
+   
     public boolean isOnSolidGround()
     {
         boolean isOnGround = false;
