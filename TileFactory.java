@@ -146,7 +146,12 @@ public class TileFactory {
                 break;
                 case 41:
                 tile = new DoorT("door_openTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-                
+                break;
+                case 61:
+                tile = new Tile("ladder_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+                break;
+                case 62:
+                tile = new LadderT("ladder_top.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
                 break;
                 default:
                 tile = new Tile("grassMid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

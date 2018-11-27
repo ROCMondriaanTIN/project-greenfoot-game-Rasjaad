@@ -41,7 +41,7 @@ public class Mover extends Actor {
     /**
      * Apply change in position based on velocityX and velocityY
      */
-    public void applyVelocity() {
+    public  void applyVelocity() {
         if (Math.abs(velocityX) < 0.01) {
             velocityX = 0;
         }

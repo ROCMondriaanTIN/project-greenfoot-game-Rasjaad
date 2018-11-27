@@ -60,6 +60,7 @@ public class Vijand extends Mover {
             
 
         }
+        
       
        
        

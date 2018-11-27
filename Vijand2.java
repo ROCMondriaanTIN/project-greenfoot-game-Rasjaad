@@ -49,9 +49,10 @@ public class Vijand2 extends Mover {
 
         velocityX = speed;
         applyVelocity();
-        if(getX() >= 1106 && getX() <= 1110 || getX() >= 1586 && getX() <= 1588 || 
+        if(getX() >= 1192 && getX() <= 1197 || getX() >= 1586 && getX() <= 1588 || 
         getX() >= 2070 && getX() <= 2074 || 
-        getX() >= 2611 && getX() <= 2617 || getX() >= 2967 && getX() <= 2971
+        getX() >= 2611 && getX() <= 2617 || getX() >= 2967 && getX() <= 2971 ||
+         getX() >= 3563 && getX() <= 3566
         ){
             setImage("p2_jump.png"); 
             velocityY = -18;

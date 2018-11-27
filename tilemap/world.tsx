@@ -172,13 +172,13 @@
  <tile id="56">
   <image width="70" height="70" source="../images/snowRight.png"/>
  </tile>
- <tile id="57">
-  <image width="70" height="70" source="../../OneDrive_1_5-11-2018/Tiles/dirtHillRight2.png"/>
+ <tile id="60">
+  <image width="70" height="70" source="../images/dirtHillRight2.png"/>
  </tile>
- <tile id="58">
-  <image width="70" height="70" source="../../OneDrive_1_5-11-2018/Tiles/ladder_mid.png"/>
+ <tile id="61">
+  <image width="70" height="70" source="../images/ladder_mid.png"/>
  </tile>
- <tile id="59">
-  <image width="70" height="70" source="../../OneDrive_1_5-11-2018/Tiles/ladder_top.png"/>
+ <tile id="62">
+  <image width="70" height="70" source="../images/ladder_top.png"/>
  </tile>
 </tileset>

@@ -63,8 +63,8 @@ public class Hero extends Mover {
                 return;
             }
         }
-        for (Actor Window : getIntersectingObjects(Window.class)) {
-            if (Window != null) {
+        for (Actor LadderT : getIntersectingObjects(LadderT.class)) {
+            if (LadderT != null) {
 
                 Greenfoot.setWorld(new Level3());
                 return;

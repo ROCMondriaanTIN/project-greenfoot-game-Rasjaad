@@ -15,6 +15,7 @@ public class DoorT extends Tile
     public void act() 
     {
         // Add your action code here.
+        touchVijand();
     }    
     public DoorT(String image, int width, int heigth) { super (image,width,heigth);}
         public void touchVijand(){
