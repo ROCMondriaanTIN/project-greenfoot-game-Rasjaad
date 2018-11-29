@@ -66,6 +66,7 @@ public class Level1 extends World {
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero();
+        
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -80,6 +81,7 @@ public class Level1 extends World {
         addObject(new Snail(), 912, 703);
         addObject(new Platform(), 1350, 357);
         addObject(new Platform(), 1930, 327);
+        addObject(new Coin(), 700, 400);
         
         addObject(new Platform(), 3180, 527);
         addObject(vijand, 856, 432); 

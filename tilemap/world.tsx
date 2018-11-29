@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.2.0" name="world" tilewidth="70" tileheight="70" tilecount="60" columns="0">
+<tileset version="1.2" tiledversion="1.2.0" name="world" tilewidth="70" tileheight="70" tilecount="69" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="70" height="70" source="../images/box.png"/>
@@ -180,5 +180,32 @@
  </tile>
  <tile id="62">
   <image width="70" height="70" source="../images/ladder_top.png"/>
+ </tile>
+ <tile id="63">
+  <image width="70" height="70" source="../images/castleHillLeft.png"/>
+ </tile>
+ <tile id="64">
+  <image width="70" height="70" source="../images/castleHillLeft2.png"/>
+ </tile>
+ <tile id="65">
+  <image width="70" height="70" source="../images/castleHillRight.png"/>
+ </tile>
+ <tile id="66">
+  <image width="70" height="70" source="../images/castleHillRight2.png"/>
+ </tile>
+ <tile id="67">
+  <image width="70" height="70" source="../images/door_openTopC.png"/>
+ </tile>
+ <tile id="68">
+  <image width="70" height="70" source="../images/door_openMidC.png"/>
+ </tile>
+ <tile id="69">
+  <image width="70" height="70" source="../images/liquidLava.png"/>
+ </tile>
+ <tile id="70">
+  <image width="70" height="70" source="../images/liquidLavaTop.png"/>
+ </tile>
+ <tile id="71">
+  <image width="70" height="70" source="../images/liquidLavaTop_mid.png"/>
  </tile>
 </tileset>

@@ -11,6 +11,13 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     private static boolean onPlatform = false;
+    public static int Hero_width;
+    public static int Hero_height;
+    private GreenfootImage run1 = new GreenfootImage("p1_walk01.png");  
+    
+    
+    private GreenfootImage run12 = new GreenfootImage("p1_walk012.png");
+    private int frame = 1;
 
     public Hero() {
         super();
@@ -36,7 +43,16 @@ public class Hero extends Mover {
         for (Actor Water : getIntersectingObjects(Water.class)) {
             if (Water != null) {
 
-                setLocation(598, 432);
+            //    setLocation(598, 432);
+                 
+                 
+                return;
+            }
+        }
+        for (Actor Lava : getIntersectingObjects(Lava.class)) {
+            if (Lava != null) {
+
+            //    setLocation(598, 432);
                  
                  
                 return;
@@ -56,6 +72,20 @@ public class Hero extends Mover {
                 return;
             }
         }
+        for (Actor DoorTC : getIntersectingObjects(DoorTC.class)) {
+            if (DoorTC != null) {
+
+                Greenfoot.setWorld(new Level4());
+                return;
+            }
+        }
+        for (Actor DoorMC : getIntersectingObjects(DoorMC.class)) {
+            if (DoorMC != null) {
+
+                Greenfoot.setWorld(new Level4());
+                return;
+            }
+        }
         for (Actor Enemy : getIntersectingObjects(Enemy.class)) {
             if (Enemy != null) {
 
@@ -67,6 +97,13 @@ public class Hero extends Mover {
             if (LadderT != null) {
 
                 Greenfoot.setWorld(new Level3());
+                return;
+            }
+        }
+        for (Actor Coin : getIntersectingObjects(Coin.class)) {
+            if (Coin != null) {
+
+                removeTouching(Coin.class);
                 return;
             }
         }
@@ -126,10 +163,10 @@ public class Hero extends Mover {
 
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -10;
-            setImage("p12.png");
+            loopLinks();
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 10;
-            setImage("p1.png");
+            loopRechts();
         }
         if(Greenfoot.isKeyDown("l")){
             System.out.println(getX() + ", " + getY());
@@ -137,6 +174,22 @@ public class Hero extends Mover {
         }
 
     }
+    public void loopRechts()
+    {
+     if (frame == 1)
+     {
+         setImage(run1);
+         getImage().scale(Hero_width, Hero_height);
+    }
+}
+public void loopLinks()
+    {
+     if (frame == 12)
+     {
+         setImage(run12);
+         getImage().scale(Hero_width, Hero_height);
+    }
+}
 
     public boolean isOnSolidGround()
     {
