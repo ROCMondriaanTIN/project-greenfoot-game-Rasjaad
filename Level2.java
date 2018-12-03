@@ -15,6 +15,7 @@ public class Level2 extends World {
     public Level2() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
+        //Background made by Freepik.
         this.setBackground("bg2.png");
 
         int[][] map = {
@@ -98,7 +99,15 @@ public class Level2 extends World {
     public void act() {
         ce.update();
     }
-
+     
+ /*   public void stopped()
+    {
+        bg2.setVolume(0);
+    }
+    public void started()
+    {
+        bg2.setVolume(20);
+    }*/
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

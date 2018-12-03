@@ -22,7 +22,7 @@ public class TitelScreen extends World
         super(1000, 800, 1, false); 
         bg.playLoop();
         Greenfoot.start();
-        setBackground("TitelScreen.png");
+        setBackground("TitleScreen.png");
     }
     public void act() {
         if (Greenfoot.isKeyDown("space"))

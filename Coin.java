@@ -16,5 +16,4 @@ public class Coin extends Mover
     {
         // Add your action code here.
     }    
-    
-}
+     }
