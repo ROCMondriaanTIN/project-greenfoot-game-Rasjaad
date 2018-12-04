@@ -7,10 +7,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends World {
 
     private CollisionEngine ce;
-    /*
-     * Made by Wild Pup Studios
-     */
-    public GreenfootSound bg1 = new GreenfootSound("Level1.mp3");
+    
+    
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -18,7 +16,7 @@ public class Level1 extends World {
     public Level1() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
-        bg1.playLoop();
+        Music.bg1.playLoop();
         setBackground("Level1Bg.png");
 
         int[][] map = {
@@ -65,7 +63,7 @@ public class Level1 extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero(7, 7);
         
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
@@ -106,11 +104,11 @@ public class Level1 extends World {
     }
     public void stopped()
     {
-        bg1.setVolume(0);
+        Music.bg1.setVolume(0);
     }
     public void started()
     {
-        bg1.setVolume(20);
+        Music.bg1.setVolume(20);
     }
 
     /**

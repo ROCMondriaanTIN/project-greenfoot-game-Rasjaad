@@ -15,6 +15,7 @@ public class Level2 extends World {
     public Level2() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
+        Music.bg2.playLoop();
         //Background made by Freepik.
         this.setBackground("bg2.png");
 
@@ -61,7 +62,7 @@ public class Level2 extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero(7, 7);
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -79,7 +80,7 @@ public class Level2 extends World {
         addObject(new Platform(), 2600, 500);
         addObject(new Platform(), 3180, 527);
         
-         addObject(new EnemyAir(), 856, 100);
+        // addObject(new EnemyAir(), 856, 100);
          addObject(v2, 1105, 326);
 
         // Force act zodat de camera op de juist plek staat.
@@ -100,14 +101,14 @@ public class Level2 extends World {
         ce.update();
     }
      
- /*   public void stopped()
+    public void stopped()
     {
-        bg2.setVolume(0);
+        Music.bg2.setVolume(0);
     }
     public void started()
     {
-        bg2.setVolume(20);
-    }*/
+        Music.bg2.setVolume(20);
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

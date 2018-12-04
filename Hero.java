@@ -11,6 +11,8 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     private static boolean onPlatform = false;
+    private static int Hero_width;
+    public static int Hero_Height;
     
     
     //Kijkt naar rechts.
@@ -42,8 +44,9 @@ public class Hero extends Mover {
     
     
     private int frame = 1;
+    
 
-    public Hero() {
+    public Hero(int width, int height) {
         super();
         gravity = 9.8;
         acc = 0.6;
@@ -79,7 +82,7 @@ public class Hero extends Mover {
         }
         for (Actor Lava : getIntersectingObjects(Lava.class)) {
             if (Lava != null) {
-
+                
                 setLocation(175, 1406);
                  
                  
@@ -88,42 +91,45 @@ public class Hero extends Mover {
         }
         for (Actor DoorM : getIntersectingObjects(DoorM.class)) {
             if (DoorM != null) {
-                
+                Music.bg1.stop();
                 Greenfoot.setWorld(new Level2());
                 return;
             }
         }
         for (Actor DoorT : getIntersectingObjects(DoorT.class)) {
             if (DoorT != null) {
-
+                Music.bg1.stop();
                 Greenfoot.setWorld(new Level2());
                 return;
             }
         }
         for (Actor DoorTC : getIntersectingObjects(DoorTC.class)) {
             if (DoorTC != null) {
-
+                Music.bg3.stop();
                 Greenfoot.setWorld(new Level4());
                 return;
             }
         }
         for (Actor DoorMC : getIntersectingObjects(DoorMC.class)) {
             if (DoorMC != null) {
-
+                Music.bg3.stop();
                 Greenfoot.setWorld(new Level4());
                 return;
             }
         }
         for (Actor Enemy : getIntersectingObjects(Enemy.class)) {
             if (Enemy != null) {
-
+                Music.bg1.stop();
+                Music.bg2.stop();
+                Music.bg3.stop();
+                Music.bg4.stop();
                 setLocation(598, 432);
                 return;
             }
         }
         for (Actor LadderT : getIntersectingObjects(LadderT.class)) {
             if (LadderT != null) {
-
+                Music.bg2.stop();
                 Greenfoot.setWorld(new Level3());
                 return;
             }
@@ -278,6 +284,7 @@ public class Hero extends Mover {
      {
          setImage("p1.png");
         }
+        frame++;
         return;
 }
  public void loopLinks()
@@ -330,6 +337,7 @@ public class Hero extends Mover {
      {
          setImage("p1.png");
         }
+        frame++;
      return;
 }
 

@@ -15,6 +15,7 @@ public class Level3 extends World {
     public Level3() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
+        Music.bg3.playLoop();
         this.setBackground("bg3.jpg");
 
         int[][] map = {
@@ -59,7 +60,7 @@ public class Level3 extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero(7, 7);
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -94,7 +95,14 @@ public class Level3 extends World {
     public void act() {
         ce.update();
     }
-
+    public void stopped()
+    {
+        Music.bg3.setVolume(0);
+    }
+    public void started()
+    {
+        Music.bg3.setVolume(20);
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
