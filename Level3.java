@@ -101,7 +101,7 @@ public class Level3 extends World {
     }
     public void started()
     {
-        Music.bg3.setVolume(20);
+        Music.bg3.setVolume(17);
     }
     /**
      * Prepare the world for the start of the program.

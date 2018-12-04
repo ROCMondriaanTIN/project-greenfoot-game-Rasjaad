@@ -210,7 +210,10 @@ public class Hero extends Mover {
         if ((Greenfoot.isKeyDown("w")) && (onGround() == true)) {
             velocityY = -15;
             setImage("p1_jump.png"); 
-           // GreenfootSound j = new GreenfootSound("jump.ogg");
+            Music.j.play();
+            Music.j.setVolume(19);
+            
+            
 
         }
         if (Greenfoot.isKeyDown("s")){
@@ -220,12 +223,13 @@ public class Hero extends Mover {
 
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -10;
-         //   GreenfootSound l = new GreenfootSound("LeftW.m4a"); 
-            
+          //  Music.leftW.play();
+          //  Greenfoot.playSound("LeftW.mp3");
             loopLinks();
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 10;
-         //   GreenfootSound l = new GreenfootSound("RightW.m4a"); 
+         //   Music.rightW.play();
+        // Greenfoot.playSound("RightW.mp3");
             loopRechts();
         }
         if(Greenfoot.isKeyDown("l")){
@@ -335,7 +339,7 @@ public class Hero extends Mover {
      }
      else 
      {
-         setImage("p1.png");
+         setImage("p12.png");
         }
         frame++;
      return;
