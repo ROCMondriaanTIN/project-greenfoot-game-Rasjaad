@@ -60,7 +60,7 @@ public class Level3 extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero(7, 7);
+        Hero hero = new Hero(47, 66);
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -70,10 +70,9 @@ public class Level3 extends World {
         addObject(hero, 327, 386);
         addObject(new Platform(), 1450, 357);
         addObject(new Platform(), 1930, 327);
-        addObject(new Platform(), 3080, 227);
+        addObject(new Platform(), 3080, 277);
         addObject(new Platform(), 4671, 427);
-       
-         addObject(new EnemyAir(), 856, 227);
+     
          addObject(v3, 529, 329);
 
         // Force act zodat de camera op de juist plek staat.

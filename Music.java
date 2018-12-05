@@ -21,11 +21,11 @@ public class Music
     
     static GreenfootSound bg4 = new GreenfootSound("Level4.mp3");
     
-    static GreenfootSound leftW = new GreenfootSound("LeftW.mp3");
-    
-    static GreenfootSound rightW = new GreenfootSound("RightW.mp3");
-    
     static GreenfootSound j = new GreenfootSound("jump.mp3");
+    
+    static GreenfootSound win = new GreenfootSound("You win.mp3");
+    
+    static GreenfootSound lose = new GreenfootSound("Lose.mp3");
     public Music()
     {
     }

@@ -13,8 +13,7 @@ public class Hero extends Mover {
     private static boolean onPlatform = false;
     private static int Hero_width;
     public static int Hero_Height;
-    
-    
+
     //Kijkt naar rechts.
     private GreenfootImage run1 = new GreenfootImage("p1_walk01.png");
     private GreenfootImage run2 = new GreenfootImage("p1_walk02.png"); 
@@ -27,7 +26,7 @@ public class Hero extends Mover {
     private GreenfootImage run9 = new GreenfootImage("p1_walk09.png"); 
     private GreenfootImage run10 = new GreenfootImage("p1_walk10.png"); 
     private GreenfootImage run11 = new GreenfootImage("p1_walk11.png"); 
-    
+
     //Kijkt naar links.
     private GreenfootImage run12 = new GreenfootImage("p1_walk01L.png");
     private GreenfootImage run13 = new GreenfootImage("p1_walk02L.png"); 
@@ -40,19 +39,23 @@ public class Hero extends Mover {
     private GreenfootImage run20 = new GreenfootImage("p1_walk09L.png"); 
     private GreenfootImage run21 = new GreenfootImage("p1_walk10L.png"); 
     private GreenfootImage run22 = new GreenfootImage("p1_walk11L.png"); 
-    
-    
+    public int star = 0;
+    public int crystal = 0;
+    public int hart = 2;
+    public static int HERO_WIDTH;
+    public static int HERO_HEIGHT;
     
     private int frame = 1;
-    
 
     public Hero(int width, int height) {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        
-        setImage("p1.png");
+        this.HERO_WIDTH = width;
+        this.HERO_HEIGHT = height;
+       setImage("p1_walk01.png");
+       getImage().scale(width, height);
     }
 
     @Override
@@ -65,7 +68,7 @@ public class Hero extends Mover {
         touchVijand2();
         touchVijand3();
         touchVijand4();
-        
+
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -73,19 +76,17 @@ public class Hero extends Mover {
 
         for (Actor Water : getIntersectingObjects(Water.class)) {
             if (Water != null) {
-
+                hart--;
                 setLocation(598, 432);
-                 
-                 
+
                 return;
             }
         }
         for (Actor Lava : getIntersectingObjects(Lava.class)) {
             if (Lava != null) {
-                
+                hart--;
                 setLocation(175, 1406);
-                 
-                 
+
                 return;
             }
         }
@@ -134,14 +135,34 @@ public class Hero extends Mover {
                 return;
             }
         }
-        for (Actor Coin : getIntersectingObjects(Coin.class)) {
-            if (Coin != null) {
+        for (Actor Crystal : getIntersectingObjects(Crystal.class)) {
+            if (Crystal != null) {
+                crystal--;
+                getWorld().removeObject(Crystal);
 
-                removeTouching(Coin.class);
                 return;
             }
         }
+        for (Actor Star : getIntersectingObjects(Star.class)) {
+            if (Star != null) {
+                star=1;
+                getWorld().removeObject(Star);
+                
+       // ((HudStar) star).setImage("star0.png"); 
+    
 
+                return;
+            }
+        }
+       
+        if ((star==1 && Greenfoot.isKeyDown("space")) && (onGround() == true)) {
+            Vijand2 v2 = new Vijand2();
+                    v2.velocityX = -20;
+                     
+                    
+                    star--;
+                    
+                }
     }
     boolean onGround()
     {
@@ -152,50 +173,42 @@ public class Hero extends Mover {
         Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
         return under != null;
     }
-     public void touchVijand(){
+
+    public void touchVijand(){
         if (isTouching(Vijand.class)){
             removeTouching(Vijand.class);
             Greenfoot.setWorld(new YouWin());
 
-
         }
-        
     }
     public void touchVijand2(){
         if (isTouching(Vijand2.class)){
             removeTouching(Vijand2.class);
             Greenfoot.setWorld(new YouWin());
 
-
         }
-        
     }
     public void touchVijand3(){
         if (isTouching(Vijand3.class)){
             removeTouching(Vijand3.class);
             Greenfoot.setWorld(new YouWin());
 
-
         }
-        
     }
     public void touchVijand4(){
         if (isTouching(Vijand4.class)){
             removeTouching(Vijand4.class);
             Greenfoot.setWorld(new YouWin());
 
-
         }
-        
     }
-
     public void touchCollision()
     {
         if(isTouching(Platform.class)){
             setLocation(getX(), getY() - 15);  
             onPlatform = true;
         }
-            else if(isTouching(PlatformC.class)){
+        else if(isTouching(PlatformC.class)){
             setLocation(getX(), getY() - 15);  
             onPlatform = true;
         }
@@ -212,8 +225,7 @@ public class Hero extends Mover {
             setImage("p1_jump.png"); 
             Music.j.play();
             Music.j.setVolume(19);
-            
-            
+
 
         }
         if (Greenfoot.isKeyDown("s")){
@@ -223,13 +235,11 @@ public class Hero extends Mover {
 
         if (Greenfoot.isKeyDown("a")) {
             velocityX = -10;
-          //  Music.leftW.play();
-          //  Greenfoot.playSound("LeftW.mp3");
+
             loopLinks();
         } else if (Greenfoot.isKeyDown("d")) {
             velocityX = 10;
-         //   Music.rightW.play();
-        // Greenfoot.playSound("RightW.mp3");
+            
             loopRechts();
         }
         if(Greenfoot.isKeyDown("l")){
@@ -238,112 +248,131 @@ public class Hero extends Mover {
         }
 
     }
+
     public void loopRechts()
     {
-     if (frame == 1)
-     {
-         setImage(run1);
-     }
-     else if (frame == 2)
-     {
-         setImage(run2);
-     }
-     else if (frame == 3)
-     {
-         setImage(run3);
-     }
-     else if (frame == 4)
-     {
-         setImage(run4);
-     }
-     else if (frame == 5)
-     {
-         setImage(run5);
-     }
-     else if (frame == 6)
-     {
-         setImage(run6);
-     }
-     else if (frame == 7)
-     {
-         setImage(run7);
-     }
-     else if (frame == 8)
-     {
-         setImage(run8);
-     }
-     else if (frame == 9)
-     {
-         setImage(run9);
-     }
-     else if (frame == 10)
-     {
-         setImage(run10);
-     }
-     else if (frame == 11)
-     {
-         setImage(run11);
-     }
-     else 
-     {
-         setImage("p1.png");
+        if (frame == 1)
+        {
+            setImage(run1);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 2)
+        {
+            setImage(run2);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 3)
+        {
+            setImage(run3);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 4)
+        {
+            setImage(run4);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 5)
+        {
+            setImage(run5);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 6)
+        {
+            setImage(run6);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 7)
+        {
+            setImage(run7);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 8)
+        {
+            setImage(run8);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 9)
+        {
+            setImage(run9);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 10)
+        {
+            setImage(run10);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 11)
+        {
+            setImage(run11);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+            frame=0;
         }
         frame++;
         return;
-}
- public void loopLinks()
+    }
+
+    public void loopLinks()
     {
-     if (frame == 12)
-     {
-         setImage(run12);
-     }
-     else if (frame == 13)
-     {
-         setImage(run13);
-     }
-     else if (frame == 14)
-     {
-         setImage(run14);
-     }
-     else if (frame == 15)
-     {
-         setImage(run15);
-     }
-     else if (frame == 16)
-     {
-         setImage(run16);
-     }
-     else if (frame == 17)
-     {
-         setImage(run17);
-     }
-     else if (frame == 18)
-     {
-         setImage(run18);
-     }
-     else if (frame == 19)
-     {
-         setImage(run19);
-     }
-     else if (frame == 20)
-     {
-         setImage(run20);
-     }
-     else if (frame == 21)
-     {
-         setImage(run21);
-     }
-     else if (frame == 22)
-     {
-         setImage(run22);
-     }
-     else 
-     {
-         setImage("p12.png");
+        if (frame == 1)
+        {
+            setImage(run12);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
         }
+        else if (frame == 2)
+        {
+            setImage(run13);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 3)
+        {
+            setImage(run14);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 4)
+        {
+            setImage(run15);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 5)
+        {
+            setImage(run16);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 6)
+        {
+            setImage(run17);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 7)
+        {
+            setImage(run18);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 8)
+        {
+            setImage(run19);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 9)
+        {
+            setImage(run20);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 10)
+        {
+            setImage(run21);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+        }
+        else if (frame == 11)
+        {
+            setImage(run22);
+            getImage().scale(HERO_WIDTH, HERO_HEIGHT);
+            frame=0;
+        }
+        
         frame++;
-     return;
-}
+        return;
+    }
 
     public boolean isOnSolidGround()
     {
@@ -356,16 +385,13 @@ public class Hero extends Mover {
         if (getOneObjectAtOffset(imageWidth / -2, imageHeight / 2, Platform.class) != null ||
         getOneObjectAtOffset(imageWidth / 2, imageHeight / 2, Platform.class) != null) 
             isOnGround = true;
-            if (getOneObjectAtOffset(imageWidth / -2, imageHeight / 2, PlatformC.class) != null ||
+        if (getOneObjectAtOffset(imageWidth / -2, imageHeight / 2, PlatformC.class) != null ||
         getOneObjectAtOffset(imageWidth / 2, imageHeight / 2, PlatformC.class) != null) 
             isOnGround = true;
 
         return isOnGround;
     }
-    
 
 }
-    
-
 
   

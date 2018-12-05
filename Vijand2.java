@@ -61,6 +61,12 @@ public class Vijand2 extends Mover {
             
 
         }
+        if(getX() >= 820 && getX() <= 825)
+        {
+            setImage("p2_jump.png");
+            velocityY = -15;
+            
+        }
       
        
        
