@@ -79,7 +79,7 @@ public class Level2 extends World {
         addObject(new Platform(), 1930, 327);
         addObject(new Platform(), 2600, 500);
         addObject(new Platform(), 3180, 527);
-        addObject(new Star(), 1157, 270); 
+        addObject(new Crystal(), 1157, 270); 
         
         // addObject(new EnemyAir(), 856, 100);
          addObject(v2, 800, 434);

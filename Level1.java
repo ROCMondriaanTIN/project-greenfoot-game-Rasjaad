@@ -77,7 +77,7 @@ public class Level1 extends World {
         addObject(new Snail(), 912, 703);
         addObject(new Platform(), 1350, 357);
         addObject(new Platform(), 1930, 327);
-        addObject(new Crystal(), 1773, 566);
+        addObject(new Star(), 1773, 566);
         
         addObject(new Platform(), 3180, 527);
         addObject(vijand, 856, 432); 

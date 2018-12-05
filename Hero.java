@@ -137,7 +137,7 @@ public class Hero extends Mover {
         }
         for (Actor Crystal : getIntersectingObjects(Crystal.class)) {
             if (Crystal != null) {
-                crystal--;
+                crystal++;
                 getWorld().removeObject(Crystal);
 
                 return;
@@ -155,12 +155,12 @@ public class Hero extends Mover {
             }
         }
        
-        if ((star==1 && Greenfoot.isKeyDown("space")) && (onGround() == true)) {
+        if ((crystal==1 && Greenfoot.isKeyDown("space")) && (onGround() == true)) {
             Vijand2 v2 = new Vijand2();
                     v2.velocityX = -20;
                      
                     
-                    star--;
+                    crystal--;
                     
                 }
     }
