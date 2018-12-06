@@ -117,7 +117,7 @@ public class Level4 extends World {
     }
     public void started()
     {
-        Music.bg4.setVolume(17);
+        Music.bg4.setVolume(25);
     }
     /**
      * Prepare the world for the start of the program.
@@ -125,7 +125,7 @@ public class Level4 extends World {
      */
     private void prepare()
     {
-        Hart hart = new Hart();
+        HudHart hart = new HudHart();
         addObject(hart,473,30);
         Hud4 h4 = new Hud4();
         addObject(h4,973,29);

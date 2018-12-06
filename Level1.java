@@ -64,13 +64,13 @@ public class Level1 extends World {
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero(47, 66);
-        
+        Vijand vijand = new Vijand();
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
-        camera.follow(hero);
+        camera.follow(vijand);
         
         
-        Vijand vijand = new Vijand();
+        
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 598, 432);
@@ -106,7 +106,7 @@ public class Level1 extends World {
     }
     public void started()
     {
-        Music.bg1.setVolume(20);
+        Music.bg1.setVolume(70);
     }
 
     /**
@@ -115,10 +115,12 @@ public class Level1 extends World {
      */
     private void prepare()
     {
-        Hart hart = new Hart();
+        HudHart hart = new HudHart();
         addObject(hart,473,30);
         Hud1 hud1 = new Hud1();
         addObject(hud1,973,29);
+        Crystal c = new Crystal();
+        addObject(c, 828, 447);
         
         
     }

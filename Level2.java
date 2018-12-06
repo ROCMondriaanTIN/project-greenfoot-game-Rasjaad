@@ -108,7 +108,7 @@ public class Level2 extends World {
     }
     public void started()
     {
-        Music.bg2.setVolume(17);
+        Music.bg2.setVolume(25);
     }
     
     /**
@@ -117,11 +117,10 @@ public class Level2 extends World {
      */
     private void prepare()
     {
-        Hart hart = new Hart();
+        HudHart hart = new HudHart();
         addObject(hart,473,30);
         Hud2 h2 = new Hud2();
         addObject(h2,973,29);
-        HudStar hudStar = new HudStar();
-        addObject(hudStar,24,23);
+        
     }
 }

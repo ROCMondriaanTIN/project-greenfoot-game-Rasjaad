@@ -27,7 +27,7 @@ public class Vijand extends Mover {
         walkRange = 20;
         firstAct = true;
 
-        speed = 8;
+        speed = 5;
     }
 
     @Override

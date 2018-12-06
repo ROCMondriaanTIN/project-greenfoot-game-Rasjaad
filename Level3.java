@@ -100,7 +100,7 @@ public class Level3 extends World {
     }
     public void started()
     {
-        Music.bg3.setVolume(17);
+        Music.bg3.setVolume(25);
     }
     /**
      * Prepare the world for the start of the program.
@@ -108,7 +108,7 @@ public class Level3 extends World {
      */
     private void prepare()
     {
-        Hart hart = new Hart();
+        HudHart hart = new HudHart();
         addObject(hart,473,30);
         Hud3 h3 = new Hud3();
         addObject(h3,973,29);

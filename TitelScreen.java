@@ -40,7 +40,7 @@ public class TitelScreen extends World
     }
     public void started()
     {
-        bg.setVolume(20);
+        bg.setVolume(100);
     }
     
 }

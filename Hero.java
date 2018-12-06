@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 
 /**
@@ -41,7 +40,7 @@ public class Hero extends Mover {
     private GreenfootImage run22 = new GreenfootImage("p1_walk11L.png"); 
     public int star = 0;
     public int crystal = 0;
-    public int hart = 2;
+    
     public static int HERO_WIDTH;
     public static int HERO_HEIGHT;
     
@@ -76,7 +75,7 @@ public class Hero extends Mover {
 
         for (Actor Water : getIntersectingObjects(Water.class)) {
             if (Water != null) {
-                hart--;
+                HudHart.leven--;
                 setLocation(598, 432);
 
                 return;
@@ -84,7 +83,7 @@ public class Hero extends Mover {
         }
         for (Actor Lava : getIntersectingObjects(Lava.class)) {
             if (Lava != null) {
-                hart--;
+                HudHart.leven--;
                 setLocation(175, 1406);
 
                 return;
@@ -143,26 +142,28 @@ public class Hero extends Mover {
                 return;
             }
         }
-        for (Actor Star : getIntersectingObjects(Star.class)) {
-            if (Star != null) {
-                star=1;
-                getWorld().removeObject(Star);
-                
-       // ((HudStar) star).setImage("star0.png"); 
-    
-
-                return;
-            }
-        }
-       
         if ((crystal==1 && Greenfoot.isKeyDown("space")) && (onGround() == true)) {
-            Vijand2 v2 = new Vijand2();
-                    v2.velocityX = -20;
+                Vijand2 v2 = new Vijand2();
+                    v2.speed = 4;
                      
                     
                     crystal--;
                     
                 }
+        for (Actor Star : getIntersectingObjects(Star.class)) {
+            if (Star != null) {
+                star=1;
+                getWorld().removeObject(Star);
+                return;
+            }
+        }
+        if ((star==1)) {
+                HudHart.leven++;
+                star--;
+                Music.levelUp.play();
+                }
+       
+        
     }
     boolean onGround()
     {
@@ -234,11 +235,11 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -10;
+            velocityX = -5;
 
             loopLinks();
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 10;
+            velocityX = 5;
             
             loopRechts();
         }
@@ -393,5 +394,3 @@ public class Hero extends Mover {
     }
 
 }
-
-  

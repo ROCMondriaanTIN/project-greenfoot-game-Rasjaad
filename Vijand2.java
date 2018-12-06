@@ -11,7 +11,7 @@ public class Vijand2 extends Mover {
     private int xMin;
     private int xMax;
     private boolean firstAct;
-    private int speed;
+    public double speed;
     private final double gravity;
     private final double acc;
     private final double drag;
@@ -27,7 +27,7 @@ public class Vijand2 extends Mover {
         walkRange = 20;
         firstAct = true;
 
-        speed = 8;
+        speed = 5;
     }
 
     @Override
