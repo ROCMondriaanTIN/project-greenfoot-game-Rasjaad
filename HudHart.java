@@ -9,7 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HudHart extends Actor
 {
     public static int leven = 2;
+    public HudHart(){
     
+    setImage("hud_heartFull.png");}
     
     /**
      * Act - do whatever the HudHart wants to do. This method is called whenever

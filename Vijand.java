@@ -51,17 +51,15 @@ public class Vijand extends Mover {
         applyVelocity();
         Jump1();
         
-    
-        
-      
-       
        
     }
     public void Jump1()
         {
-            if(getX() >= 1155 && getX() <= 1160 || getX() >= 1586 && getX() <= 1588 || 
+            if(getX() >= 1586 && getX() <= 1588 || 
         getX() >= 2070 && getX() <= 2074 || 
-        getX() >= 2611 && getX() <= 2617 || getX() >= 2967 && getX() <= 2971
+        getX() >= 2611 && getX() <= 2617 || getX() >= 2967 && getX() <= 2971 ||
+        getX() >= 4308 && getX() <= 4312 || getX() >= 4656 && getX() <= 4660 ||
+        getX() >= 4929 && getX() <= 4933 || getX() >= 5346 && getX() <= 5350
         ){
             setImage("p2_jump.png"); 
             velocityY = -18;
@@ -70,22 +68,17 @@ public class Vijand extends Mover {
             
 
         }
-        }
-        public void Jump2()
-        {
-            if(getX() >= 1155 && getX() <= 1160 || getX() >= 1586 && getX() <= 1588 || 
-        getX() >= 2070 && getX() <= 2074 || 
-        getX() >= 2611 && getX() <= 2617 || getX() >= 2967 && getX() <= 2971
+         if(getX() >= 1158 && getX() <= 1162 
         ){
             setImage("p2_jump.png"); 
-            velocityY = -18;
+            velocityY = -20;
             
             
             
 
         }
         }
-   
+        
    
     public boolean isOnSolidGround()
     {

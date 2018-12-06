@@ -16,11 +16,17 @@ public class LadderT extends Tile
     {
         // Add your action code here.
         touchVijand2();
+        touchVijand4();
     }  
     public LadderT(String image, int width, int heigth) { super (image,width,heigth);}
           public void touchVijand2(){
 if (isTouching(Vijand2.class)){
 removeTouching(Vijand2.class);
+}
+}
+      public void touchVijand4(){
+if (isTouching(Vijand4.class)){
+removeTouching(Vijand4.class);
 }
 }
 }

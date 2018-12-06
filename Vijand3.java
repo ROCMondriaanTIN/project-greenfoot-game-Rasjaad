@@ -49,9 +49,10 @@ public class Vijand3 extends Mover {
 
         velocityX = speed;
         applyVelocity();
-        if(getX() >= 625 && getX() <= 628 || 
-        getX() >= 1251 && getX() <= 1254 || 
-        getX() >= 1781 && getX() <= 1784 || getX() >= 2273 && getX() <= 2276 ||
+        if(getX() >= 625 && getX() <= 628 || getX() >= 799 && getX() <= 803 || 
+        getX() >= 1251 && getX() <= 1254 || getX() >= 1781 && getX() <= 1784 || 
+        getX() >= 2185 && getX() <= 2189 || getX() >= 2273 && getX() <= 2276 ||
+        getX() >= 2553 && getX() <= 2557 || getX() >= 3078 && getX() <= 3082 ||
          getX() >= 3083 && getX() <= 3086 || getX() >= 3439 && getX() <= 3442 || getX() >= 4447 && getX() <= 4450
          || getX() >= 5431 && getX() <= 5434
         ){
@@ -61,6 +62,12 @@ public class Vijand3 extends Mover {
             
             
 
+        }
+        if(getX() >= 4429 && getX() <= 4433 )
+        {
+            setImage("p2_jump.png"); 
+            velocityY = -150;
+            
         }
       
        

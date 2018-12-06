@@ -50,10 +50,16 @@ public class Vijand4 extends Mover {
         velocityX = speed;
         applyVelocity();
         if(getX() >= 729 && getX() <= 732 || 
+        getX() >= 1054 && getX() <= 1058 || 
         getX() >= 1537 && getX() <= 1540 ||
+        getX() >= 1947 && getX() <= 1951 ||
+        getX() >= 2970 && getX() <= 2974 ||
         getX() >= 3392 && getX() <= 3396 ||
         getX() >= 4552 && getX() <= 4556 || 
-        getX() >= 5671 && getX() <= 5676 
+        getX() >= 5671 && getX() <= 5676 ||
+        getX() >= 6328 && getX() <= 6334 ||
+        getX() >= 8840 && getX() <= 8844 ||
+        getX() >= 9510 && getX() <= 9514 
          
         
         ){

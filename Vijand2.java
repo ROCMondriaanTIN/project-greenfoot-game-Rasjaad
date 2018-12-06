@@ -51,8 +51,11 @@ public class Vijand2 extends Mover {
         applyVelocity();
         if(getX() >= 1192 && getX() <= 1197 || getX() >= 1586 && getX() <= 1588 || 
         getX() >= 2070 && getX() <= 2074 || 
-        getX() >= 2611 && getX() <= 2617 || getX() >= 2967 && getX() <= 2971 ||
-         getX() >= 3563 && getX() <= 3566
+        getX() >= 2611 && getX() <= 2617 || getX() >= 2721 && getX() <= 2725 ||
+        getX() >= 2967 && getX() <= 2971 || getX() >= 3500 && getX() <= 3504 ||
+        getX() >= 3563 && getX() <= 3566 || getX() >= 3789 && getX() <= 3793 ||
+        getX() >= 5072 && getX() <= 5076 || getX() >= 5842 && getX() <= 5846 ||
+        getX() >= 6205 && getX() <= 6207 || getX() >= 6510 && getX() <= 6514 
         ){
             setImage("p2_jump.png"); 
             velocityY = -18;

@@ -143,8 +143,14 @@ public class Hero extends Mover {
             }
         }
         if ((crystal==1 && Greenfoot.isKeyDown("space")) && (onGround() == true)) {
-                Vijand2 v2 = new Vijand2();
-                    v2.speed = 4;
+            Vijand2 v1 = new Vijand2();    
+            Vijand2 v2 = new Vijand2();
+            Vijand2 v3 = new Vijand2();
+            Vijand2 v4 = new Vijand2();
+            v1.velocityX = 4;
+            v2.velocityX = 4;
+            v3.velocityX = 4;
+            v4.velocityX = 4;
                      
                     
                     crystal--;
