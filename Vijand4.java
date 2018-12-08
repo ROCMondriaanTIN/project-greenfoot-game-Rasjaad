@@ -58,8 +58,8 @@ public class Vijand4 extends Mover {
         getX() >= 4552 && getX() <= 4556 || 
         getX() >= 5671 && getX() <= 5676 ||
         getX() >= 6328 && getX() <= 6334 ||
-        getX() >= 8840 && getX() <= 8844 ||
-        getX() >= 9510 && getX() <= 9514 
+        getX() >= 8840 && getX() <= 8844 
+         
          
         
         ){
@@ -76,15 +76,28 @@ public class Vijand4 extends Mover {
         getX() >= 3172 && getX() <= 3175 ||
         getX() >= 6183 && getX() <= 6186 ||
         getX() >= 7270 && getX() <= 7273 ||
-        getX() >= 7298 && getX() <= 7300)
+        getX() >= 7298 && getX() <= 7300 ||
+        getX() >= 9870 && getX() <= 9874)
         {
             setImage("p2_jump.png");
             velocityY = -10;
+        }
+        else if (getX() >= 9510 && getX() <= 9514 )
+        
+        {
+            setImage("p2_jump.png");
+            velocityY = -20;
+        }
+        else if (getX() >= 9990 && getX() <= 9994 )
+        
+        {
+            Greenfoot.setWorld(new Lose());
         }
         else
         {
             setImage("p2_stand.png");
         }
+        
       
        
        

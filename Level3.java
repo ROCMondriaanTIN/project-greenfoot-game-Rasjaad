@@ -68,10 +68,14 @@ public class Level3 extends World {
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 327, 386);
-        addObject(new Platform(), 1450, 357);
+        addObject(new Platform(), 1500, 357);
         addObject(new Platform(), 1930, 327);
-        addObject(new Platform(), 3080, 277);
+        addObject(new Platform(), 2880, 277);
+        addObject(new Platform(), 3200, 277);
         addObject(new Platform(), 4671, 427);
+        addObject(new Crystal(), 612, 325);
+        addObject(new Crystal(), 2181, 265);
+        addObject(new Star(), 5049, 442);
      
          addObject(v3, 529, 329);
 

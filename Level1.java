@@ -77,6 +77,8 @@ public class Level1 extends World {
         addObject(new Platform(), 1360, 357);
         addObject(new Platform(), 1930, 327);
         addObject(new Star(), 2752, 627);
+        addObject(new Crystal(), 1720, 225);
+        addObject(new Crystal(), 3630, 600);
         
         addObject(new Platform(), 3180, 527);
         addObject(vijand, 856, 432); 
@@ -118,8 +120,7 @@ public class Level1 extends World {
         addObject(hart,473,30);
         Hud1 hud1 = new Hud1();
         addObject(hud1,973,29);
-        Crystal c = new Crystal();
-        addObject(c, 1660, 265);
+        
         
         
         

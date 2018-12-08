@@ -12,6 +12,7 @@ public class Hero extends Mover {
     private static boolean onPlatform = false;
     private static int Hero_width;
     public static int Hero_Height;
+    
 
     //Kijkt naar rechts.
     private GreenfootImage run1 = new GreenfootImage("p1_walk01.png");
@@ -39,7 +40,7 @@ public class Hero extends Mover {
     private GreenfootImage run21 = new GreenfootImage("p1_walk10L.png"); 
     private GreenfootImage run22 = new GreenfootImage("p1_walk11L.png"); 
     public int star = 0;
-    public int crystal = 0;
+    public static int crystal;
     
     public static int HERO_WIDTH;
     public static int HERO_HEIGHT;
@@ -56,7 +57,7 @@ public class Hero extends Mover {
        setImage("p1_walk01.png");
        getImage().scale(width, height);
     }
-
+   
     @Override
     public void act() {
         handleInput();
@@ -137,24 +138,16 @@ public class Hero extends Mover {
         for (Actor Crystal : getIntersectingObjects(Crystal.class)) {
             if (Crystal != null) {
                 crystal++;
+                
                 getWorld().removeObject(Crystal);
-
+                
                 return;
             }
         }
-        if ((crystal==1 && Greenfoot.isKeyDown("space")) && (onGround() == true)) {
-            Vijand2 v1 = new Vijand2();    
-            Vijand2 v2 = new Vijand2();
-            Vijand2 v3 = new Vijand2();
-            Vijand2 v4 = new Vijand2();
-            v1.velocityX = 4;
-            v2.velocityX = 4;
-            v3.velocityX = 4;
-            v4.velocityX = 4;
-                     
-                    
-                    crystal--;
-                    
+          if ((crystal>=1)) {
+                velocityX = velocityX + 0.2;
+                
+                
                 }
         for (Actor Star : getIntersectingObjects(Star.class)) {
             if (Star != null) {
