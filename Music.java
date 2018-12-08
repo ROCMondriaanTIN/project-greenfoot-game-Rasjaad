@@ -11,23 +11,23 @@ public class Music
     /*
      * Made by Wild Pup Studios
      */
-    static GreenfootSound bg1 = new GreenfootSound("Level1.wav");
+    static GreenfootSound bg1 = new GreenfootSound("Level1.mp3");
     /*
      * Made by relaxdaily
      */
-    static GreenfootSound bg2 = new GreenfootSound("Level2.wav");
+    static GreenfootSound bg2 = new GreenfootSound("Level2.mp3");
     
-    static GreenfootSound bg3 = new GreenfootSound("Level4.wav");
+    static GreenfootSound bg3 = new GreenfootSound("Level4.mp3");
     
-    static GreenfootSound bg4 = new GreenfootSound("Level3.wav");
+    static GreenfootSound bg4 = new GreenfootSound("Level3.mp3");
     
-    static GreenfootSound j = new GreenfootSound("jump.wav");
+    static GreenfootSound j = new GreenfootSound("jump.mp3");
     
-    static GreenfootSound win = new GreenfootSound("You win.wav");
+    static GreenfootSound win = new GreenfootSound("You win.mp3");
     
-    static GreenfootSound lose = new GreenfootSound("Lose.wav");
+    static GreenfootSound lose = new GreenfootSound("Lose.mp3");
     
-    static GreenfootSound levelUp = new GreenfootSound("Level Up.wav");
+    static GreenfootSound levelUp = new GreenfootSound("Level Up.mp3");
     
     public Music()
     {

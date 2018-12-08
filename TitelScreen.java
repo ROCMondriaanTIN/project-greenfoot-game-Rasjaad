@@ -11,7 +11,7 @@ public class TitelScreen extends World
     /*
      * Made by Wild Pup Studios
      */
-    public GreenfootSound bg = new GreenfootSound("Titlescreen.wav");
+    public GreenfootSound bg = new GreenfootSound("Titlescreen.mp3");
     /**
      * Constructor for objects of class TitelScreen.
      * 
