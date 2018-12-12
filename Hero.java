@@ -144,7 +144,7 @@ public class Hero extends Mover {
                 return;
             }
         }
-          if ((crystal==1 && ((Greenfoot.isKeyDown("space")) && (onGround() == true)))) {
+          if ((crystal>=1 && ((Greenfoot.isKeyDown("space")) && (onGround() == true)))) {
               velocityX = -35;
               velocityY = -25;
               
@@ -237,11 +237,11 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("a")) {
-            velocityX = -6;
+            velocityX = -5.7;
 
             loopLinks();
         } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 6;
+            velocityX = 5.7;
             
             loopRechts();
         }
